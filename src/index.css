@@ -1,0 +1,391 @@
+@import "tailwindcss";
+
+/* ====================================================================
+   ClearPath — Hospital Command Center Design System
+   Dark theme with electric cyan accents and glassmorphism
+   ==================================================================== */
+
+@theme {
+  /* Core color palette */
+  --color-bg-primary: #050d1a;
+  --color-bg-secondary: #0a1628;
+  --color-bg-tertiary: #0f1f35;
+  --color-bg-card: rgba(10, 22, 40, 0.7);
+  --color-bg-glass: rgba(15, 31, 53, 0.6);
+
+  --color-cyan: #00d4ff;
+  --color-cyan-dim: #00a3c4;
+  --color-cyan-glow: rgba(0, 212, 255, 0.15);
+  --color-cyan-glow-strong: rgba(0, 212, 255, 0.3);
+
+  --color-danger: #ff2d55;
+  --color-danger-dim: #cc2444;
+  --color-danger-glow: rgba(255, 45, 85, 0.2);
+
+  --color-warning: #ff9f0a;
+  --color-warning-dim: #cc7f08;
+  --color-warning-glow: rgba(255, 159, 10, 0.15);
+
+  --color-success: #30d158;
+  --color-success-dim: #26a746;
+  --color-success-glow: rgba(48, 209, 88, 0.15);
+
+  --color-p1: #ff2d55;
+  --color-p2: #ff6b2d;
+  --color-p3: #ff9f0a;
+  --color-p4: #00a3c4;
+  --color-p5: #30d158;
+
+  --color-text-primary: #e8ecf1;
+  --color-text-secondary: #8899aa;
+  --color-text-muted: #4a5c6e;
+
+  --color-border: rgba(0, 212, 255, 0.12);
+  --color-border-strong: rgba(0, 212, 255, 0.25);
+
+  /* Fonts */
+  --font-mono: 'JetBrains Mono', ui-monospace, 'Cascadia Code', 'Fira Code', monospace;
+  --font-sans: 'DM Sans', system-ui, -apple-system, sans-serif;
+}
+
+/* ====================================================================
+   Base Styles
+   ==================================================================== */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Subtle background grid pattern */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+}
+
+/* ====================================================================
+   Scrollbar Styles
+   ==================================================================== */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg-secondary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-cyan-dim);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-cyan);
+}
+
+/* ====================================================================
+   Glassmorphism Card
+   ==================================================================== */
+.glass-card {
+  background: var(--color-bg-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+}
+
+.glass-card-glow {
+  background: var(--color-bg-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--color-border-strong);
+  border-radius: 12px;
+  box-shadow: 0 0 20px var(--color-cyan-glow), inset 0 0 20px rgba(0, 212, 255, 0.02);
+}
+
+/* ====================================================================
+   Animations
+   ==================================================================== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulseP1 {
+  0%, 100% {
+    box-shadow: 0 0 8px rgba(255, 45, 85, 0.4), 0 0 20px rgba(255, 45, 85, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 45, 85, 0.8), 0 0 60px rgba(255, 45, 85, 0.4), 0 0 100px rgba(255, 45, 85, 0.2);
+  }
+}
+
+@keyframes pulseP2 {
+  0%, 100% {
+    box-shadow: 0 0 8px rgba(255, 107, 45, 0.3), 0 0 20px rgba(255, 107, 45, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(255, 107, 45, 0.6), 0 0 40px rgba(255, 107, 45, 0.3);
+  }
+}
+
+@keyframes borderGlow {
+  0%, 100% {
+    border-color: rgba(255, 45, 85, 0.3);
+  }
+  50% {
+    border-color: rgba(255, 45, 85, 0.8);
+  }
+}
+
+@keyframes screenEdgeGlow {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes progressPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.4s ease-out forwards;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.4s ease-out forwards;
+}
+
+.animate-pulse-p1 {
+  animation: pulseP1 1.5s ease-in-out infinite;
+}
+
+.animate-pulse-p2 {
+  animation: pulseP2 2s ease-in-out infinite;
+}
+
+.animate-border-glow {
+  animation: borderGlow 1.5s ease-in-out infinite;
+}
+
+/* P1 screen edge glow overlay */
+.p1-screen-glow::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  box-shadow: inset 0 0 80px rgba(255, 45, 85, 0.3), inset 0 0 200px rgba(255, 45, 85, 0.1);
+  animation: screenEdgeGlow 1.5s ease-in-out infinite;
+}
+
+/* ====================================================================
+   Triage Badge Styles
+   ==================================================================== */
+.triage-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  border-radius: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.triage-badge-p1 {
+  background: rgba(255, 45, 85, 0.2);
+  color: #ff2d55;
+  border: 1px solid rgba(255, 45, 85, 0.4);
+  animation: pulseP1 1.5s ease-in-out infinite;
+}
+
+.triage-badge-p2 {
+  background: rgba(255, 107, 45, 0.2);
+  color: #ff6b2d;
+  border: 1px solid rgba(255, 107, 45, 0.4);
+  animation: pulseP2 2s ease-in-out infinite;
+}
+
+.triage-badge-p3 {
+  background: rgba(255, 159, 10, 0.15);
+  color: #ff9f0a;
+  border: 1px solid rgba(255, 159, 10, 0.3);
+}
+
+.triage-badge-p4 {
+  background: rgba(0, 163, 196, 0.15);
+  color: #00a3c4;
+  border: 1px solid rgba(0, 163, 196, 0.3);
+}
+
+.triage-badge-p5 {
+  background: rgba(48, 209, 88, 0.15);
+  color: #30d158;
+  border: 1px solid rgba(48, 209, 88, 0.3);
+}
+
+/* ====================================================================
+   Radial Progress Ring
+   ==================================================================== */
+.progress-ring-circle {
+  transition: stroke-dashoffset 1s ease-in-out;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+
+/* ====================================================================
+   Workflow Task Card Statuses
+   ==================================================================== */
+.task-pending {
+  border-left: 3px solid var(--color-text-muted);
+}
+
+.task-in-progress {
+  border-left: 3px solid var(--color-warning);
+}
+
+.task-done {
+  border-left: 3px solid var(--color-success);
+}
+
+/* ====================================================================
+   Activity Feed
+   ==================================================================== */
+.activity-feed-item {
+  animation: fadeInUp 0.3s ease-out;
+}
+
+/* ====================================================================
+   Utility
+   ==================================================================== */
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+/* Typewriter effect container */
+.typewriter-text span {
+  display: inline;
+}
+
+/* Loading spinner */
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--color-bg-tertiary);
+  border-top-color: var(--color-cyan);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+/* Scanline effect for dramatic flair */
+.scanline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-cyan-glow), transparent);
+  animation: scanline 4s linear infinite;
+  pointer-events: none;
+  z-index: 10;
+}
