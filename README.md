@@ -10,7 +10,7 @@ Video Presentation Link:
 
 ---
 
-## 🏥 What is ClearPath?
+## What is ClearPath?
 
 ClearPath is a production-grade hospital emergency department workflow system where **Z.AI's GLM** acts as the **central triage brain**. A patient walks in, describes their condition in plain language (Bahasa Malaysia, English, or mixed Manglish), and ClearPath instantly:
 
