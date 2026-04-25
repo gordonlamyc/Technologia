@@ -71,7 +71,7 @@ Press **🎬 Demo Mode** to auto-run 5 dramatic patient scenarios showcasing P1 
 
 ---
 
-## 📋 Features
+## Features
 
 | Feature | Description |
 |---|---|
@@ -87,7 +87,7 @@ Press **🎬 Demo Mode** to auto-run 5 dramatic patient scenarios showcasing P1 
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Frontend**: React + Tailwind CSS v4
 - **AI Engine**: Z.AI GLM-4 (OpenAI-compatible API)
