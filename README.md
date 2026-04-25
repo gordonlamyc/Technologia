@@ -23,7 +23,7 @@ ClearPath is a production-grade hospital emergency department workflow system wh
 
 ---
 
-## 🧠 Architecture
+## Architecture
 
 ```
 [Patient Intake Interface]
@@ -41,7 +41,7 @@ See [ARCHITECTURE.md](./ARCHITECTURE.md) for the full system design document.
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 - Node.js 18+
@@ -75,15 +75,15 @@ Press **🎬 Demo Mode** to auto-run 5 dramatic patient scenarios showcasing P1 
 
 | Feature | Description |
 |---|---|
-| 🧠 GLM Triage Engine | Multilingual clinical reasoning with structured JSON output |
-| 🏥 Malaysian Triage Standard | P1 (Immediate) through P5 (Non-urgent) classification |
-| 🌏 Manglish Support | Handles mixed BM/EN/Manglish patient descriptions |
-| 📊 Live Dashboard | Real-time bed availability, queue counts, activity feed |
-| ⚡ Workflow Orchestration | Animated task board for bed, doctor, lab, imaging, pharmacy, nursing |
-| 🎬 Demo Mode | One-click automated 5-scenario demonstration |
-| 🚨 P1 Alert Effects | Pulsing red badges, screen-edge glow, audio alert beep |
-| 📝 Patient History | Full session log with expandable GLM reasoning & workflow details |
-| 🛡️ Error Resilience | API timeout handling, graceful degradation, retry support |
+| GLM Triage Engine | Multilingual clinical reasoning with structured JSON output |
+| Malaysian Triage Standard | P1 (Immediate) through P5 (Non-urgent) classification |
+| Manglish Support | Handles mixed BM/EN/Manglish patient descriptions |
+| Live Dashboard | Real-time bed availability, queue counts, activity feed |
+| Workflow Orchestration | Animated task board for bed, doctor, lab, imaging, pharmacy, nursing |
+| Demo Mode | One-click automated 5-scenario demonstration |
+| P1 Alert Effects | Pulsing red badges, screen-edge glow, audio alert beep |
+| Patient History | Full session log with expandable GLM reasoning & workflow details |
+| Error Resilience | API timeout handling, graceful degradation, retry support |
 
 ---
 
@@ -97,7 +97,7 @@ Press **🎬 Demo Mode** to auto-run 5 dramatic patient scenarios showcasing P1 
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 clearpath/
@@ -117,7 +117,7 @@ clearpath/
 
 ---
 
-## 🏆 Hackathon Criteria Coverage
+## Hackathon Criteria Coverage
 
 | Criterion | How ClearPath Delivers |
 |---|---|
