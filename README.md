@@ -83,7 +83,7 @@ Press **🎬 Demo Mode** to auto-run 5 dramatic patient scenarios showcasing P1 
 | Demo Mode | One-click automated 5-scenario demonstration |
 | P1 Alert Effects | Pulsing red badges, screen-edge glow, audio alert beep |
 | Patient History | Full session log with expandable GLM reasoning & workflow details |
-| Error Resilience | API timeout handling, graceful degradation, retry support |
+
 
 ---
 
